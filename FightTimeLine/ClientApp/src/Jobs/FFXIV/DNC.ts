@@ -148,7 +148,7 @@ const abilities: IAbility[] = [
     },
     cooldown: 60,
     xivDbId: "16015",
-    abilityType: AbilityType.Healing,
+    abilityType: AbilityType.PartyHealing,
     levelAcquired: 52
   },
   {
