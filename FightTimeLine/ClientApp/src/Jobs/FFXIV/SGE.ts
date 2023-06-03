@@ -42,7 +42,7 @@ const statuses = MapStatuses({
   },
   haima: {
     duration: 15,
-    effects: [Effects.shield.party(10)], // todo: review this value
+    effects: [Effects.shield.solo(10)], // todo: review this value
   },
   holos: {
     duration: 20,
@@ -54,7 +54,7 @@ const statuses = MapStatuses({
   },
   panhaima: {
     duration: 15,
-    effects: [Effects.mitigation.party(7)], // todo: review this value
+    effects: [Effects.shield.party(7)], // todo: review this value
   },
   krasis: {
     duration: 10,
@@ -88,7 +88,7 @@ const abilities = [
     cooldown: 60,
     xivDbId: 24302,
     statuses: [statuses.physisII],
-    abilityType: AbilityType.Healing,
+    abilityType: AbilityType.Healing | AbilityType.PartyHealingBuff,
   },
 
   {
@@ -177,7 +177,7 @@ const abilities = [
     xivDbId: 24298,
     levelAcquired: 50,
     statuses: [statuses.kerachole],
-    abilityType: AbilityType.PartyDefense,
+    abilityType: AbilityType.PartyDefense | abilityType.PartyHealing,
   },
   {
     name: "Ixochole",
@@ -191,7 +191,7 @@ const abilities = [
     cooldown: 30,
     xivDbId: 24299,
     levelAcquired: 52,
-    abilityType: AbilityType.Healing,
+    abilityType: AbilityType.PartyHealing,
   },
   {
     name: "Zoe",
@@ -220,7 +220,7 @@ const abilities = [
     cooldown: 30,
     xivDbId: 24301,
     levelAcquired: 58,
-    abilityType: AbilityType.Healing,
+    abilityType: AbilityType.PartyHealing | AbilityType.Healing,
   },
   {
     name: "Taurochole",
@@ -252,7 +252,7 @@ const abilities = [
     levelAcquired: 62,
     settings: [settings.target],
     statuses: [statuses.haima],
-    abilityType: AbilityType.SelfShield | AbilityType.PartyShield,
+    abilityType: AbilityType.SelfShield,
   },
   {
     name: "Rhizomata",
@@ -281,7 +281,7 @@ const abilities = [
     xivDbId: 24310,
     levelAcquired: 76,
     statuses: [statuses.holos],
-    abilityType: AbilityType.PartyDefense | AbilityType.Healing,
+    abilityType: AbilityType.PartyDefense | AbilityType.PartyHealing | AbilityType.PartyShield,
   },
   {
     name: "Panhaima",
@@ -326,7 +326,7 @@ const abilities = [
     cooldown: 120,
     xivDbId: 24318,
     levelAcquired: 90,
-    abilityType: AbilityType.Healing | AbilityType.Damage,
+    abilityType: AbilityType.PartyHealing | AbilityType.Damage,
   },
 ] as IAbility[];
 
